@@ -7,7 +7,7 @@ import Home from './component/common/Home'
 import Register from './component/users/Register'
 import Login from './component/users/Login'
 import Logout from './component/users/Logout'
-import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 
 import CustomerList from './component/customers/List'

@@ -1,9 +1,9 @@
 import axios from '../config/axios'
 import swal from 'sweetalert'
 import {setCustomers} from './customers'
-import {setDepartments} from './departments'
-import {setEmployees}from './employees'
-import {setTickets} from './tickets'
+// import {setDepartments} from './departments'
+// import {setEmployees}from './employees'
+// import {setTickets} from './tickets'
 export const setUser=(user={})=>{
     return {
         type:'SET_USER',

@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import _ from 'lodash'
 import {Link} from 'react-router-dom'
-import {Modal, ModalBody, ModalFooter, ModalHeader,Button, Jumbotron} from 'reactstrap'
+import {Jumbotron} from 'reactstrap'
 function DeptShow(props){
     console.log('emp', props.id)
     return (
@@ -14,7 +13,7 @@ function DeptShow(props){
         {
             (props.employees.length>0) && props.employees.map((e)=>
               { 
-                  return <h6>{e.name}</h6>
+                  return <h6 key={e._id} align="center">{e.name}</h6>
 
             })
         }
@@ -28,7 +27,6 @@ function DeptShow(props){
 }
 
 const mapStateToProps=(state, props)=>{
-    // console.log('emp', state.employees, props.match.params.id)
     return {
         employees:state.employees.filter(e=>e.department._id==props.match.params.id)
 

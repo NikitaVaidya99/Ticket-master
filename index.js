@@ -10,20 +10,16 @@ app.use(express.json())
 const port=process.env.PORT ||3015
 configureDB()
 
+// app.get('/', (req, res)=>{
+//     res.send('welcome to the ticket master backend')
+// })
+
+app.use('/', router)
+
 app.use(express.static(path.join(__dirname,"client/build"))) 
 app.get("*",(req,res) => { 
     res.sendFile(path.join(__dirname + "/client/build/index.html")) 
 }) 
-
-
-app.get('/', (req, res)=>{
-    res.send('welcome to the ticket master backend')
-})
-
-app.use('/', router)
-
-
-
 
 
 app.listen(port, ()=>{

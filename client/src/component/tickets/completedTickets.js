@@ -30,7 +30,6 @@ class CompletedTickets extends React.Component{
          return e.join()
      }
 render(){
-  // console.log('customer', this.props.employees)
     return(
         <div>
              <br/>
@@ -80,7 +79,7 @@ render(){
                                </tr>
                            )}
                            else{
-                            return (<h2></h2>)
+                            return ( <React.Fragment key={ticket._id}></React.Fragment>)
                            }
                        })
                    }

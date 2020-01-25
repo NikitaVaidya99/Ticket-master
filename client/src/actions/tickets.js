@@ -98,7 +98,6 @@ export const editTicket=(ticket)=>{
 }
 export const startEditTicket=(formData, props)=>{
     return (dispatch)=>{
-        //console.log('prop', props.match.params.id)
         axios.put(`/tickets/${props.match.params.id}`,formData,{
             headers:{
                 'x-auth':localStorage.getItem('authToken')
@@ -122,7 +121,6 @@ export const startEditTicket=(formData, props)=>{
 }
 export const startChangeCheckboxTicket=(id, formData, props)=>{
     return (dispatch)=>{
-       // console.log('prop', props.match.params.id)
         axios.put(`/tickets/${id}`,formData,{
             headers:{
                 'x-auth':localStorage.getItem('authToken')
@@ -132,7 +130,12 @@ export const startChangeCheckboxTicket=(id, formData, props)=>{
             if(!response.data.hasOwnProperty('errors')){
                 const ticket=response.data
                dispatch(editTicket(ticket))
-               props.history.push(`/tickets`)
+               if(formData.isResolved==true){
+                props.history.push(`/tickets`)
+               }
+               else{
+                props.history.push(`/completedTickets`)
+               }
             }
             else{
                 // alert(response.data.message)  

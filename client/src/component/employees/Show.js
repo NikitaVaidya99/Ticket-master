@@ -1,5 +1,5 @@
 import React from 'react'
-import { Jumbotron, Button } from 'reactstrap'
+import { Jumbotron } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import _ from 'lodash'
 import {connect} from 'react-redux'
@@ -40,9 +40,10 @@ function EmployeeShow(props){
 }
 
 const mapStateToProps=(state, props)=>{
-    console.log('id',props.match.params.id)
+    // console.log('id',props.match.params.id)
+    // console.log('emp',state.employees)
     return {
-        employee:state.employees.find(e=>e._id==props.match.params.id)
+        employee:state.employees.find(e=>(e._id)===props.match.params.id)
     }
 }
 

@@ -69,7 +69,7 @@ class TicketList extends React.Component{
                            }
                            else{
                                return (
-                                 <p></p>
+                                <React.Fragment key={ticket._id}></React.Fragment>
                                )
                            }
                           

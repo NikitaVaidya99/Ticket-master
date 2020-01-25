@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from '../../config/axios'
 import {Link} from 'react-router-dom'
 import {startRemoveCustomer} from '../../actions/customers'
 import {connect} from 'react-redux'

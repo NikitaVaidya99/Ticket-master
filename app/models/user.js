@@ -60,11 +60,11 @@ userSchema.pre('save', function(next){
 
 userSchema.statics.findByCredentials=function(email, password){
     const User=this
-    console.log('user', this)
+   // console.log('user', this)
     return User.findOne({email})
     
             .then(function(user){
-                console.log(user)
+               // console.log(user)
                 if(!user){
                     return Promise.reject('invalid email/ invalid password')
                 }
@@ -128,7 +128,7 @@ userSchema.statics.findByToken=function(token){
         catch(err){
             return Promise.reject(err)
         }
-        console.log('tokenData', tokenData)
+        //console.log('tokenData', tokenData)
         return User.findOne({
             _id:tokenData.id,
             'tokens.token':token

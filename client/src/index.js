@@ -15,9 +15,11 @@ import configureStore from './store/configureStore'
 
 const store=configureStore()
 
-store.subscribe(()=>{
-     console.log(store.getState())
-})
+// store.subscribe(()=>{
+//      console.log(store.getState())
+// })
+
+
 //meant for page reloads
 //handle all page reloads and to get the initial data from the serverto stre it in the redux store
 if(localStorage.getItem('authToken')){

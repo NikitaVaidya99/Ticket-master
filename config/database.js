@@ -4,7 +4,8 @@ const configureDB=()=>{
     //db configuration
     mongoose.connect(CONNECTION, {
         useNewUrlParser:true,
-        useUnifiedTopology:true
+        useUnifiedTopology:true,
+        useCreateIndex: true,
     })
    
     // mongoose.connect('mongodb+srv://nikita_21:nikita123@cluster0-wldti.mongodb.net/test?retryWrites=true&w=majority', {

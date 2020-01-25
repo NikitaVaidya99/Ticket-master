@@ -30,7 +30,7 @@ const authenticate=function(req, res, next){
     User.findByToken(token)
     .then(function(user){
       //res.send(user)
-      console.log('hi', user)
+    //  console.log('hi', user)
       if(user){
          
         req.user=user

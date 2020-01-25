@@ -1,6 +1,4 @@
 import axios from '../config/axios'
-//import RemoveDept from '../component/departments/remove'
-import swal from 'sweetalert'
 export const setDepartments=(dept)=>{
     return {
         type:'SET_DEPT',
